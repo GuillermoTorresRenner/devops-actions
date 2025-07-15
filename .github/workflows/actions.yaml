@@ -61,15 +61,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Build
-        run: |
-          mkdir ./dist
-          cp index.html ./dist/
-          cp app.js ./dist/
+          cache: "npm"
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Build del proyecto Next.js
+        run: npm run export
       - name: Subir artefacto para Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist"
+          path: "./out"
       - name: Desplegar en Github Pages
         id: deployment
         uses: actions/deploy-pages@v4
