@@ -1,0 +1,52 @@
+.cardContainer {    
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    transition: transform .8s;
+    transform-style: preserve-3d;
+    border-radius: 13px;
+}
+
+@media screen and (max-width: 768px) {
+    .card:hover{
+        animation: none !important;
+        transform: none !important;    
+    }
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.cardFront,
+.cardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 13px;
+}
+
+.cardFront {
+    padding: 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cardBack {
+    background-color: #2B463C;
+    padding-left: 35px;
+    padding-right: 35px;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

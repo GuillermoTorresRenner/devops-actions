@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-urbanist text-h3 text-dark;
+}
+h1 {
+    @apply text-h2 font-bold font-merryweather text-primary sm:text-h1;
+}
+h2 {
+    @apply text-h2 font-bold font-merryweather text-primary sm:text-h3;
+}
+h3 {
+    @apply text-sm font-bold font-merryweather text-primary sm:text-h3;
+}
+
+.btn {
+    @apply text-button font-semibold  px-3 py-2  border-2 text-grey rounded-xl;
+}
+.subhead-1 {
+    @apply text-subhead font-bold;
+}
+.subhead-2 {
+    @apply text-subhead;
+}
+.caption-1 {
+    @apply text-caption font-bold;
+}
+.caption-2 {
+    @apply text-caption;
+}
+
+.item .activeIcon{
+  @apply hidden;
+}
+
+.item.active .inactiveIcon{
+  @apply hidden;
+}
+
+.item.active .activeIcon{
+  @apply block;
+}
+
+.item:not(.active) .content{
+  @apply  h-0 overflow-hidden py-0;
+}
+
+.item .content{
+  @apply px-8 py-2;
+}
+
+.slides:hover {
+  @apply transition-all ease-in duration-3000 md:duration-6000   
+}
