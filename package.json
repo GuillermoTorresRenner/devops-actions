@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "echo \"No tests yet\" && true",
-    "export": "next build"
+    "export": "next build",
+    "deploy:prepare": "./scripts/prepare-deploy.sh",
+    "deploy:local": "npm run export && npm run deploy:prepare"
   },
   "dependencies": {
     "@uidotdev/usehooks": "^2.4.1",
