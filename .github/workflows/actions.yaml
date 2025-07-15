@@ -66,6 +66,8 @@ jobs:
         run: npm ci
       - name: Build del proyecto Next.js
         run: npm run export
+      - name: Preparar deploy
+        run: ./scripts/prepare-deploy.sh
       - name: Subir artefacto para Pages
         uses: actions/upload-pages-artifact@v3
         with:
